@@ -9,3 +9,5 @@ echo '[
 ]' | cargo run -q
 
 cargo run -q '[3,2,1]'
+
+cargo run -q sample.json

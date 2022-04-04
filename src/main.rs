@@ -1,3 +1,4 @@
+use std::fs;
 use std::io::Read;
 
 fn main() {
@@ -13,7 +14,13 @@ fn main() {
     }
 
     for item in &inputs[1..] {
-        parse_input(item);
+        if item.contains("[") {
+            parse_input(item);
+        } else {
+            parse_input(
+                &fs::read_to_string(item).expect("Failed to read file.")
+            )
+        }
     }
 }
 
