@@ -19,14 +19,14 @@ fn main() {
         } else {
             parse_input(
                 &fs::read_to_string(item).expect("Failed to read file.")
-            )
+            );
         }
     }
 }
 
 pub fn parse_input(data: &str) {
     let mut result = vec![];
-    for item in data.split(",") {
+    for item in data.split(',') {
         let line = item
             .chars()
             .filter(|c| !c.eq(&'"') && !c.eq(&'[') && !c.eq(&']') && !c.eq(&','))
@@ -37,5 +37,5 @@ pub fn parse_input(data: &str) {
             result.push(line);
         }
     }
-    print!("{}", result.join("\n"))
+    print!("{}", result.join("\n"));
 }
